@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <h1>Basic Calculator</h1>
+        <p id="result"></p>
+        <input type="number" placeholder="Number1" id="num1">
+        
+        <select name="operator" id="ops">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">x</option>
+            <option value="/">/</option>
+          </select>
+        <input type="number" placeholder="Number2"id="num2">
+        <input type="button" name="Calculate" id="button" onclick="calculate()" value="click me">
+        <br>
+        <br>
+        <input type="button"name="Changetext"id='textChange' value="Change Text" onclick="change_Text()">
+        <br>  
+        <p id="Change">Hai how are you</p>
+    
+    <script>
+        var a=document.getElementById("num1");
+        console.log("outside function"+a.value);// value is not showing in console?
+        var b=document.getElementById("num2");
+        var op=document.getElementById("ops");
+        var result=document.getElementById("result");
+
+        function calculate(){
+            if(a.value===""||b.value===""){
+                result.innerHTML="Number not entered";
+            }else if(op.value=='+'){
+               result.innerHTML=parseInt (a.value)+parseInt(b.value);
+            }else if(op.value=='-'){
+                result.innerHTML=a.value-b.value;
+            }else if(op.value=='*'){
+                result.innerHTML=a.value*b.value;
+            }
+
+        }
+        function change_Text(){
+           document. getElementById("Change").innerHTML="I am Harsh Palathingal";
+        }
+    </script>
+</body>
+</html>
